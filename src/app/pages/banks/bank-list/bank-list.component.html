@@ -1,0 +1,7 @@
+<ba-card cardTitle="List of Banks" baCardClass="with-scroll" class="smart-table-container">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search Bank..." (input)="onSearch($event.target.value)">
+  </div>
+  <ng2-smart-table [settings]="settings" [source]="source" (delete)="onDelete($event)" (edit)="onEdit($event)">
+  </ng2-smart-table>
+</ba-card>

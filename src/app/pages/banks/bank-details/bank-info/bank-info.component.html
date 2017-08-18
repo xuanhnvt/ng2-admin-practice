@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" placeholder="Name" *ngIf="bankInfo" [(ngModel)]="bankInfo.name">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="inputSlug">Slug</label>
+      <input type="text" class="form-control" id="inputSlug" placeholder="Slug" *ngIf="bankInfo" [(ngModel)]="bankInfo.slug">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="inputMaxLoan">Max Loan Duration</label>
+      <input type="number" class="form-control" id="inputMaxLoan" placeholder="Max Loan Duration" *ngIf="bankInfo" [(ngModel)]="bankInfo.max_loan_duration">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="inputMainColor">Main Color</label>
+      <input type="color" id="inputMainColor" placeholder="Main Color" *ngIf="bankInfo" [(ngModel)]="bankInfo.main_color">
+    </div>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary" disabled="disabled">Submit</button>

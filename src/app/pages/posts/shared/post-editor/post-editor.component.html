@@ -1,0 +1,72 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">{{modalHeader}}</h4>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <ba-card cardTitle="Post Details" baCardClass="with-scroll">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputTitle">Title</label>
+          <input type="text" class="form-control" id="inputTitle" placeholder="Title" *ngIf="postDetails" [(ngModel)]="postDetails.title">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputSlug">Slug</label>
+          <input type="text" class="form-control" id="inputSlug" placeholder="Slug" *ngIf="postDetails" [(ngModel)]="postDetails.slug">
+        </div>
+      </div> 
+    </div>
+     <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputTag">Tags</label>
+          <input type="text" class="form-control" id="inputTag" placeholder="Tag" *ngIf="postDetails" [(ngModel)]="postDetails.tags">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputOrder">Order</label>
+          <input type="number" class="form-control" id="inputOrder" placeholder="Order" *ngIf="postDetails" [(ngModel)]="postDetails.order">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputShortDescription">Short Description</label>
+          <textarea class="form-control" id="inputShortDescription" placeholder="Short Description" *ngIf="postDetails" [(ngModel)]="postDetails.short_desc"></textarea>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="selectPublish">Publish</label>
+          <select class="form-control" id="selectPublish" *ngIf="postDetails" [(ngModel)]="postDetails.publish">
+            <option [ngValue]="1">ON</option>
+            <option [ngValue]="0">OFF</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ckeditor *ngIf="postDetails" [(ngModel)]="postDetails.body" [config]="config" 
+          debounce="500">
+        </ckeditor>
+      </div>
+    </div>
+  </ba-card>
+  <div class="modal-footer">
+    <ul class="btn-list clearfix">
+      <li>
+        <button class="btn btn-primary" (click)="save()">Save</button>
+      </li>
+      <li>
+        <button class="btn btn-primary" (click)="closeModal()">Cancel</button>
+      </li>
+    </ul>
+  </div>
+</div>

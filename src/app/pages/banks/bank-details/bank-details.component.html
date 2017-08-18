@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <ba-card cardTitle="Navigation" baCardClass="with-scroll">
+      <button (click)="backToList()" type="button" class="btn btn-primary btn-with-icon"><i class="ion-arrow-left-a"></i>Back to list</button>
+    </ba-card>
+     <!-- <a routerLinkActive="active" [routerLink]="['/pages/banks/bank-list']">Back to list</a>  -->
+  </div>
+  <div class="col-md-12">
+    <ba-card cardTitle="Bank Details" baCardClass="with-scroll">
+      <ba-card cardTitle="Bank Info" baCardClass="with-scroll">
+        <bank-info [bankId]="id"></bank-info>
+      </ba-card>
+      <ba-card cardTitle="Bank Branches" baCardClass="with-scroll">
+        <bank-branches [bankId]="id"></bank-branches>
+      </ba-card>
+    </ba-card>
+  </div>
+</div>
