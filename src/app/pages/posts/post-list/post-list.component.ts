@@ -89,7 +89,10 @@ export class PostListComponent implements OnInit {
       
 
       // delete from database
-      this._postsService.deletePost(event.data['id']).then(() => this.loadPosts());
+      this._postsService.deletePost(event.data['id']).then(() => {
+        this.loadPosts();
+        this._notificationsService.success('Delete Post', 'Successful');
+      });
 
       //event.confirm.resolve();
 
@@ -113,7 +116,10 @@ export class PostListComponent implements OnInit {
     activeModal.componentInstance.modalHeader = 'Edit Post';
     activeModal.componentInstance.action = 'edit';
     activeModal.componentInstance.postDetails = event.data;
-    activeModal.result.then(() => this.loadPosts());
+    activeModal.result.then(() => {
+      this.loadPosts();
+      this._notificationsService.success('Edit Post', 'Successful');
+    });
   }
 
   onCreate(event) {
@@ -133,8 +139,10 @@ export class PostListComponent implements OnInit {
 
       this.source.refresh();
     });*/
-    activeModal.result.then(() => this.loadPosts());
-    this._notificationsService.success('Create Post', 'Success');
+    activeModal.result.then(() => {
+      this.loadPosts();
+      this._notificationsService.success('Create Post', 'Successful');
+    });
   }
 
   open(content) {
